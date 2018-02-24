@@ -1,0 +1,16 @@
+package com.fluxextreme.moneyflux.dataservice;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class MoneyFluxDataserviceApplicationTests {
+
+	@Test
+	public void contextLoads() {
+	}
+
+}
