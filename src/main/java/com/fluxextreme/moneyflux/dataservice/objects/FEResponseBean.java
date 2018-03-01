@@ -4,6 +4,7 @@ public class FEResponseBean {
 
 	boolean login;
 	boolean authorizationPresent;
+	boolean success;
 	String message;
 	Object data;
 
@@ -21,6 +22,14 @@ public class FEResponseBean {
 
 	public void setAuthorizationPresent(boolean authorizationPresent) {
 		this.authorizationPresent = authorizationPresent;
+	}
+
+	public boolean isSuccess() {
+		return success;
+	}
+
+	public void setSuccess(boolean success) {
+		this.success = success;
 	}
 
 	public String getMessage() {

@@ -9,7 +9,8 @@ import com.fluxextreme.moneyflux.dataservice.entities.User;
 import com.fluxextreme.moneyflux.dataservice.objects.FEResponseBean;
 import com.fluxextreme.moneyflux.dataservice.objects.UserLoginDetails;
 
-@RestController(value = "/login-service")
+@RestController
+@RequestMapping(value = "/login-service")
 public class LoginController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
@@ -23,7 +24,7 @@ public class LoginController {
 		return response;
 	}
 
-	@RequestMapping(value = "/register", method = RequestMethod.POST)
+	@RequestMapping(value = "/signup-with/email", method = RequestMethod.POST)
 	public FEResponseBean register(@RequestBody User user) {
 
 		FEResponseBean response = new FEResponseBean();
@@ -33,4 +34,5 @@ public class LoginController {
 		response.setData(user);
 		return response;
 	}
+
 }
