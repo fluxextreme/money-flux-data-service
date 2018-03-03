@@ -5,14 +5,14 @@ import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fluxextreme.moneyflux.dataservice.objects.FEResponseBean;
-import com.fluxextreme.moneyflux.dataservice.repositories.UserRepository;
+import com.fluxextreme.moneyflux.dataservice.repositories.MoneyFluxUserRepository;
 import com.fluxextreme.moneyflux.dataservice.services.UserSettingsService;
 
 @Service
 public class UserSettingsServiceImpl implements UserSettingsService {
 
 	@Autowired
-	UserRepository userRepository;
+	MoneyFluxUserRepository moneyFluxUserRepository;
 	
 	@Autowired
 	ObjectMapper objectMapper;
@@ -25,9 +25,9 @@ public class UserSettingsServiceImpl implements UserSettingsService {
 		response.setLogin(true);
 		try {
 			response.setMessage("User details retrieval successfull");
-			response.setData(userRepository.findByUserId(userId));
-			System.out.println("UserList:::::"+objectMapper.writeValueAsString(userRepository.findAll()));
-			System.out.println("UserObj:::::"+objectMapper.writeValueAsString(userRepository.findByUserId(userId)));
+			response.setData(moneyFluxUserRepository.findByUserId(userId));
+			System.out.println("UserList:::::"+objectMapper.writeValueAsString(moneyFluxUserRepository.findAll()));
+			System.out.println("UserObj:::::"+objectMapper.writeValueAsString(moneyFluxUserRepository.findByUserId(userId)));
 			response.setSuccess(true);
 		} catch (Exception e) {
 			response.setMessage("User details retrieval failure: " + e.getMessage());

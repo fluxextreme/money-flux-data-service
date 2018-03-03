@@ -1,11 +1,12 @@
 package com.fluxextreme.moneyflux.dataservice.entities;
 
 import java.sql.Date;
+import java.util.List;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "user")
-public class User {
+@Document(collection = "users")
+public class MoneyFluxUser {
 
 	Long userId;
 	String lastName;
@@ -15,12 +16,18 @@ public class User {
 	String address;
 	Integer city;
 	Integer state;
-	Integer zip;
+	String zip;
 	String phone;
 	String email;
 	Integer country;
 	Date createdOn;
-	boolean active;
+	String username;
+	String password;
+	List<String> authorities;
+	boolean credentialsNonExpired;
+	boolean accountNonExpired;
+	boolean accountNonLocked;
+	boolean enabled;
 
 	public Long getUserId() {
 		return userId;
@@ -86,11 +93,11 @@ public class User {
 		this.state = state;
 	}
 
-	public Integer getZip() {
+	public String getZip() {
 		return zip;
 	}
 
-	public void setZip(Integer zip) {
+	public void setZip(String zip) {
 		this.zip = zip;
 	}
 
@@ -126,12 +133,60 @@ public class User {
 		this.createdOn = createdOn;
 	}
 
-	public boolean isActive() {
-		return active;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setActive(boolean active) {
-		this.active = active;
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public List<String> getAuthorities() {
+		return authorities;
+	}
+
+	public void setAuthorities(List<String> authorities) {
+		this.authorities = authorities;
+	}
+
+	public boolean isCredentailsNonExpired() {
+		return credentialsNonExpired;
+	}
+
+	public void setCredentailsNonExpired(boolean credentialsNonExpired) {
+		this.credentialsNonExpired = credentialsNonExpired;
+	}
+
+	public boolean isAccountNonExpired() {
+		return accountNonExpired;
+	}
+
+	public void setAccountNonExpired(boolean accountNonExpired) {
+		this.accountNonExpired = accountNonExpired;
+	}
+
+	public boolean isAccountNonLocked() {
+		return accountNonLocked;
+	}
+
+	public void setAccountNonLocked(boolean accountNonLocked) {
+		this.accountNonLocked = accountNonLocked;
+	}
+
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 
 }

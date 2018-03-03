@@ -11,11 +11,11 @@ import com.mongodb.MongoClient;
 @Configuration
 public class MoneyFluxMongoConfiguration {
 
-	public @Bean MongoDbFactory mongoDbFactory() {
+	public @Bean MongoDbFactory mongodbFactory() {
 		return new SimpleMongoDbFactory(new MongoClient("127.0.0.1"), "moneyflux");
 	}
 
 	public @Bean MongoTemplate mongoTemplate() {
-		return new MongoTemplate(mongoDbFactory());
+		return new MongoTemplate(mongodbFactory());
 	}
 }
