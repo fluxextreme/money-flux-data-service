@@ -28,7 +28,7 @@ public class MoneyFluxSpringSecurityConfig extends WebSecurityConfigurerAdapter{
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable().authorizeRequests()
+		http.cors().and().csrf().disable().authorizeRequests()
 		.antMatchers("/money-flux-dataservice/*").permitAll()
 		.antMatchers("/user").hasAnyRole("USER")
 		.antMatchers("/admin").hasAnyRole("ADMIN")

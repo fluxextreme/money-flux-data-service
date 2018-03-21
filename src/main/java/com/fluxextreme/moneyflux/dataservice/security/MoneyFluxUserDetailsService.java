@@ -24,8 +24,11 @@ public class MoneyFluxUserDetailsService implements UserDetailsService {
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
 		MongoTemplate mongoTemplate = mongodbConfig.mongoTemplate();
+		System.out.println("username:::::::"+username);
 		Query userDetailsQuery = Query.query(Criteria.where("username").is(username.toLowerCase()));
 		List<MoneyFluxUser> userDetailsList = mongoTemplate.find(userDetailsQuery, MoneyFluxUser.class);
+		System.out.println("........."+userDetailsList.size());
+		
 		
 		if (userDetailsList.size() == 1) {
 			MoneyFluxUser user=userDetailsList.stream().findFirst().get();
