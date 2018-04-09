@@ -32,7 +32,7 @@ public class MoneyFluxSpringSecurityConfig extends WebSecurityConfigurerAdapter{
 		.antMatchers("/money-flux-dataservice/*").permitAll()
 		.antMatchers("/user").hasAnyRole("USER")
 		.antMatchers("/admin").hasAnyRole("ADMIN")
-		.anyRequest().authenticated()
+		/*.anyRequest().authenticated()*/
 		.and()
 		.formLogin()
 		.usernameParameter("username")

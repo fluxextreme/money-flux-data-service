@@ -51,5 +51,17 @@ public class LoginController {
 		response.setData(moneyFluxUser);
 		return response;
 	}
+	
+	@RequestMapping(value = "/test", method = RequestMethod.GET)
+	public FEResponseBean test() {
+
+		System.out.println("In Signup.......");
+		FEResponseBean response = new FEResponseBean();
+		response.setAuthorizationPresent(true);
+		response.setLogin(true);
+		response.setMessage("Registration successfull");
+		response.setData(null);
+		return response;
+	}
 
 }
